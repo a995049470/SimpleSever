@@ -1,0 +1,5 @@
+D:\StudyData\VSProjects\SmapleServer\Potocol\bin\Debug\Potocol.dll
+D:\StudyData\VSProjects\SmapleServer\Potocol\bin\Debug\Potocol.pdb
+D:\StudyData\VSProjects\SmapleServer\Potocol\obj\Debug\Protocol.csproj.CoreCompileInputs.cache
+D:\StudyData\VSProjects\SmapleServer\Potocol\obj\Debug\Potocol.dll
+D:\StudyData\VSProjects\SmapleServer\Potocol\obj\Debug\Potocol.pdb

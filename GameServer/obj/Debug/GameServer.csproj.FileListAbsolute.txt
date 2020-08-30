@@ -1,0 +1,12 @@
+D:\StudyData\VSProjects\SmapleServer\GameServer\bin\Debug\GameServer.exe.config
+D:\StudyData\VSProjects\SmapleServer\GameServer\bin\Debug\GameServer.exe
+D:\StudyData\VSProjects\SmapleServer\GameServer\bin\Debug\GameServer.pdb
+D:\StudyData\VSProjects\SmapleServer\GameServer\obj\Debug\GameServer.csprojAssemblyReference.cache
+D:\StudyData\VSProjects\SmapleServer\GameServer\obj\Debug\GameServer.csproj.CoreCompileInputs.cache
+D:\StudyData\VSProjects\SmapleServer\GameServer\obj\Debug\GameServer.exe
+D:\StudyData\VSProjects\SmapleServer\GameServer\obj\Debug\GameServer.pdb
+D:\StudyData\VSProjects\SmapleServer\GameServer\bin\Debug\LPTC.dll
+D:\StudyData\VSProjects\SmapleServer\GameServer\bin\Debug\LUDP.dll
+D:\StudyData\VSProjects\SmapleServer\GameServer\bin\Debug\LUDP.pdb
+D:\StudyData\VSProjects\SmapleServer\GameServer\bin\Debug\LPTC.pdb
+D:\StudyData\VSProjects\SmapleServer\GameServer\obj\Debug\GameServer.csproj.CopyComplete

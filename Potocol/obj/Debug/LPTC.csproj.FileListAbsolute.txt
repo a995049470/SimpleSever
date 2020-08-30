@@ -1,0 +1,6 @@
+D:\StudyData\VSProjects\SmapleServer\Potocol\obj\Debug\LPTC.csproj.CoreCompileInputs.cache
+D:\StudyData\VSProjects\SmapleServer\Potocol\bin\Debug\LPTC.dll
+D:\StudyData\VSProjects\SmapleServer\Potocol\bin\Debug\LPTC.pdb
+D:\StudyData\VSProjects\SmapleServer\Potocol\obj\Debug\LPTC.dll
+D:\StudyData\VSProjects\SmapleServer\Potocol\obj\Debug\LPTC.pdb
+D:\StudyData\VSProjects\SmapleServer\Potocol\obj\Debug\LPTC.csprojAssemblyReference.cache

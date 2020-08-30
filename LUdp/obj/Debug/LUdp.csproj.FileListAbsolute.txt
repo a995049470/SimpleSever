@@ -1,0 +1,6 @@
+D:\StudyData\VSProjects\SmapleServer\LUdp\bin\Debug\LUdp.dll
+D:\StudyData\VSProjects\SmapleServer\LUdp\bin\Debug\LUdp.pdb
+D:\StudyData\VSProjects\SmapleServer\LUdp\obj\Debug\LUdp.csprojAssemblyReference.cache
+D:\StudyData\VSProjects\SmapleServer\LUdp\obj\Debug\LUdp.csproj.CoreCompileInputs.cache
+D:\StudyData\VSProjects\SmapleServer\LUdp\obj\Debug\LUdp.dll
+D:\StudyData\VSProjects\SmapleServer\LUdp\obj\Debug\LUdp.pdb

@@ -1,0 +1,16 @@
+D:\StudyData\VSProjects\SmapleServer\LPTCTool\bin\Debug\LPTCTool.exe.config
+D:\StudyData\VSProjects\SmapleServer\LPTCTool\bin\Debug\LPTCTool.exe
+D:\StudyData\VSProjects\SmapleServer\LPTCTool\bin\Debug\LPTCTool.pdb
+D:\StudyData\VSProjects\SmapleServer\LPTCTool\obj\Debug\LPTCTool.csproj.CoreCompileInputs.cache
+D:\StudyData\VSProjects\SmapleServer\LPTCTool\obj\Debug\LPTCTool.exe
+D:\StudyData\VSProjects\SmapleServer\LPTCTool\obj\Debug\LPTCTool.pdb
+D:\StudyData\VSProjects\SmapleServer\LPTCTool\obj\Debug\LPTCTool.csproj.CopyComplete
+D:\StudyData\VSProjects\SmapleServer\LPTCTool\bin\Debug\BouncyCastle.Crypto.dll
+D:\StudyData\VSProjects\SmapleServer\LPTCTool\bin\Debug\ICSharpCode.SharpZipLib.dll
+D:\StudyData\VSProjects\SmapleServer\LPTCTool\bin\Debug\NPOI.dll
+D:\StudyData\VSProjects\SmapleServer\LPTCTool\bin\Debug\NPOI.OOXML.dll
+D:\StudyData\VSProjects\SmapleServer\LPTCTool\bin\Debug\NPOI.OpenXml4Net.dll
+D:\StudyData\VSProjects\SmapleServer\LPTCTool\bin\Debug\NPOI.OpenXmlFormats.dll
+D:\StudyData\VSProjects\SmapleServer\LPTCTool\bin\Debug\BouncyCastle.Crypto.xml
+D:\StudyData\VSProjects\SmapleServer\LPTCTool\bin\Debug\ICSharpCode.SharpZipLib.pdb
+D:\StudyData\VSProjects\SmapleServer\LPTCTool\bin\Debug\ICSharpCode.SharpZipLib.xml
