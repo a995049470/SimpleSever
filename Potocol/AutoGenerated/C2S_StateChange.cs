@@ -19,7 +19,7 @@ namespace LPTC
 
             var b_10 = Helper.ToBytes(state);
 
-            len = (ushort)(b_10.Length);
+            len = (ushort)(0 + b_10.Length);
             var b_1 = Helper.ToBytes(len);
             return Helper.MergeBytes(b_0, b_1, b_10); 
         }

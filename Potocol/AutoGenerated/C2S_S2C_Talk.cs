@@ -22,7 +22,7 @@ namespace LPTC
             len_talk = (ushort)b_10.Length;
             var b_9 = Helper.ToBytes(len_talk);
 
-            len = (ushort)(b_9.Length + b_10.Length);
+            len = (ushort)(0 + b_9.Length + b_10.Length);
             var b_1 = Helper.ToBytes(len);
             return Helper.MergeBytes(b_0, b_1, b_9, b_10); 
         }

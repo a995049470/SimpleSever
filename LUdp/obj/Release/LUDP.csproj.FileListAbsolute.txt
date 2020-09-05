@@ -1,0 +1,4 @@
+D:\StudyData\UnityPorjects\WarOfCard\Assets\Plugins\LUDP.dll
+D:\StudyData\VSProjects\SmapleServer\LUdp\obj\Release\LUDP.csprojAssemblyReference.cache
+D:\StudyData\VSProjects\SmapleServer\LUdp\obj\Release\LUDP.csproj.CoreCompileInputs.cache
+D:\StudyData\VSProjects\SmapleServer\LUdp\obj\Release\LUDP.dll

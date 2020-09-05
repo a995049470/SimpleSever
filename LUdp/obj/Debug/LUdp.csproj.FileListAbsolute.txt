@@ -1,6 +1,8 @@
 D:\StudyData\VSProjects\SmapleServer\LUdp\bin\Debug\LUdp.dll
 D:\StudyData\VSProjects\SmapleServer\LUdp\bin\Debug\LUdp.pdb
-D:\StudyData\VSProjects\SmapleServer\LUdp\obj\Debug\LUdp.csprojAssemblyReference.cache
-D:\StudyData\VSProjects\SmapleServer\LUdp\obj\Debug\LUdp.csproj.CoreCompileInputs.cache
-D:\StudyData\VSProjects\SmapleServer\LUdp\obj\Debug\LUdp.dll
-D:\StudyData\VSProjects\SmapleServer\LUdp\obj\Debug\LUdp.pdb
+D:\StudyData\UnityPorjects\WarOfCard\Assets\Plugins\LUDP.dll
+D:\StudyData\UnityPorjects\WarOfCard\Assets\Plugins\LUDP.pdb
+D:\StudyData\VSProjects\SmapleServer\LUdp\obj\Debug\LUDP.csprojAssemblyReference.cache
+D:\StudyData\VSProjects\SmapleServer\LUdp\obj\Debug\LUDP.csproj.CoreCompileInputs.cache
+D:\StudyData\VSProjects\SmapleServer\LUdp\obj\Debug\LUDP.dll
+D:\StudyData\VSProjects\SmapleServer\LUdp\obj\Debug\LUDP.pdb

@@ -16,13 +16,42 @@ namespace LPTCTool
         //反序列化的序号
         public int index;
     }
+    
     public class LPTCCreator
     {
+        public static void CreateLPTCEnum(ISheet sheet, string outpath)
+        {
+            string content = @"
+namespace LPTC
+{
+    public enum LPTCType
+    {
+{var_types}
+    }
+}";
+            string var_types = "";
+            for (int i = 0; i < sheet.LastRowNum + 1; i++)
+            {
+                var row = sheet.GetRow(i);
+                if (row == null)
+                {
+                    return;
+                }
+                string pid = row.GetCell(0)?.ToString();
+                string type_name = row.GetCell(1)?.ToString();
+                var_types += $"        {type_name} = {pid},\n";
+            }
+            content = content.Replace("{var_types}", var_types);
+            string path = $"{outpath}\\{"LPTCType"}.cs";
+            System.IO.File.WriteAllText(path, content);
+
+        }
 
         private static bool IsVariableLengthType(string type)
         {
             bool isVLT = false;
-            if (type == "string")
+            if (type == "string" || 
+                type == "byte[]")
             {
                 isVLT = true;
             }
@@ -60,7 +89,7 @@ namespace LPTC
             var b_0 = Helper.ToBytes(id);
 
 {body_tobytes}
-            len = (ushort)({body_len});
+            len = (ushort)(0{body_len});
             var b_1 = Helper.ToBytes(len);
             return Helper.MergeBytes(b_0, b_1{mearg_args}); 
         }
@@ -118,10 +147,10 @@ namespace LPTC
                 }
 
             }
-            if (list.Count == 0)
-            {
-                return;
-            }
+            //if (list.Count == 0)
+            //{
+            //    return;
+            //}
             //按声明顺序排列
             list.Sort((x, y) =>
             {
@@ -140,13 +169,10 @@ namespace LPTC
                     var last = list[i - 1];
                     ex = $", value.{last.name}";
                 }
-                body_parse += $"            value.{f.name} = Helper.To_{f.type}(bytes, ref start{ex});\n";
+                body_parse += $"            value.{f.name} = Helper.To_{f.type.Replace("[]", "Array")}(bytes, ref start{ex});\n";
                 mearg_args += $", b_{f.index}";
-                body_len += $"b_{f.index}.Length";
-                if (i != list.Count - 1)
-                {
-                    body_len += " + ";
-                }
+                body_len += $" + b_{f.index}.Length";
+                
             }
             //按序列化顺序排列
             list.Sort((x, y) =>

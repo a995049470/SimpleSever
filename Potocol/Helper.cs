@@ -53,6 +53,64 @@ namespace LPTC
             return value;
         }
 
+        public static byte[] ToBytes(long value)
+        {
+            byte[] bytes = new byte[8];
+            for (int i = 0; i < bytes.Length; i++)
+            {
+                bytes[i] = (byte)(value >> (i * 8));
+            }
+            return bytes;
+        }
+
+        public static long To_long(byte[] bytes, ref int start)
+        {
+            long value = 0;
+            for (int i = start; i < start + 8; i++)
+            {
+                value |= (long)bytes[i] << ((i - start) * 8);
+            }
+            start += 8;
+            return value;
+        }
+
+        public static byte[] ToBytes(int value)
+        {
+            byte[] bytes = new byte[4];
+            for (int i = 0; i < bytes.Length; i++)
+            {
+                bytes[i] = (byte)(value >> (i * 8));
+            }
+            return bytes;
+        }
+
+        public static int To_int(byte[] bytes, ref int start)
+        {
+            int value = 0;
+            for (int i = start; i < start + 4; i++)
+            {
+                value |= (int)bytes[i] << ((i - start) * 8);
+            }
+            start += 4;
+            return value;
+        }
+        
+        public static byte[] ToBytes(byte[] bytes)
+        {
+            return bytes;
+        }
+
+        public static byte[] To_byteArray(byte[] bytes, ref int start, int len)
+        {
+            var value = new byte[len];
+            for (int i = 0; i < len; i++)
+            {
+                value[i] = bytes[i + start];
+            }
+            start += len;
+            return value;
+        }
+        
         public static byte[] MergeBytes(params byte[][] bytesArray)
         {
             int total = 0;

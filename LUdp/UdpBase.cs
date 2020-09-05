@@ -19,6 +19,16 @@ namespace LUDP
             m_client = new UdpClient();
         }
         
+        public IPEndPoint GetRemoteEndPoint()
+        {
+            return m_client.Client.RemoteEndPoint as IPEndPoint;
+        }
+
+        public IPEndPoint GetLocalEndPoint()
+        {
+            return m_client.Client.LocalEndPoint as IPEndPoint;
+        }
+
         public async Task<Received> Receive()
         {
             var reslut = await m_client.ReceiveAsync();
