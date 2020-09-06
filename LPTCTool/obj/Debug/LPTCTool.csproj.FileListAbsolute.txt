@@ -14,3 +14,4 @@ D:\StudyData\VSProjects\SmapleServer\LPTCTool\bin\Debug\NPOI.OpenXmlFormats.dll
 D:\StudyData\VSProjects\SmapleServer\LPTCTool\bin\Debug\BouncyCastle.Crypto.xml
 D:\StudyData\VSProjects\SmapleServer\LPTCTool\bin\Debug\ICSharpCode.SharpZipLib.pdb
 D:\StudyData\VSProjects\SmapleServer\LPTCTool\bin\Debug\ICSharpCode.SharpZipLib.xml
+D:\StudyData\VSProjects\SmapleServer\LPTCTool\obj\Debug\LPTCTool.csprojAssemblyReference.cache

@@ -39,7 +39,6 @@ namespace LUDP
             };
         }
 
-        
         public bool C2S_Send<T>(T value) where T : IToBytes
         {
             byte[] bytes;

@@ -13,10 +13,17 @@ namespace GameServer
         private List<IPEndPoint> m_waitIPList;
         private Task m_task;
         private UdpListener Listener;
+        private LPTCHandle m_handle;
+        private IPEndPoint m_reciveIp;
         public CloudServer()
         {
             m_roomIPList = new List<IPEndPoint>();
+            m_waitIPList = new List<IPEndPoint>();
             Listener = new UdpListener();
+            m_handle = new LPTCHandle();
+            m_handle.AddListener(Handle_C2S_BuildRoom);
+            m_handle.AddListener(Handle_C2S_StartLinkRoom);
+            m_handle.AddListener(Handle_C2S_EndLinkRoom);
             m_task = Task.Run(async () =>
             {
                 while (true)
@@ -29,19 +36,8 @@ namespace GameServer
 
         public void Handle(Received received)
         {
-            LPTCType type = (LPTCType)(received.msg[0] | received.msg[1] << 8);
-            switch (type)
-            {
-                case LPTCType.C2S_BuildRoom:
-                    Handle_C2S_BuildRoom(C2S_BuildRoom.Parse(received.msg));
-                    break;
-                case LPTCType.C2S_StartLinkRoom:
-                    Handle_C2S_StartLinkRoom(received.sender);                 
-                    break;
-                case LPTCType.C2S_EndLinkRoom:
-                    Handle_C2S_EndLinkRoom(received.sender);
-                    break;
-            }
+            m_reciveIp = received.sender;
+            m_handle.Handle(received.msg);
         }
 
         public void LinkRoom()
@@ -59,12 +55,14 @@ namespace GameServer
                     port = roomIP.Port
                 };
                 Listener.S2C_Send(waitIP, value);
+                Console.WriteLine($"{waitIP} 链接了房间 {roomIP}");
             }
         }
 
         public void Handle_C2S_BuildRoom(C2S_BuildRoom value)
         {
             var ip = new IPEndPoint(new IPAddress(value.address), value.port);
+            Console.WriteLine($"{m_reciveIp} 尝试建立房间 {ip}");
             if(!m_roomIPList.Contains(ip))
             {
                 m_roomIPList.Add(ip);
@@ -72,20 +70,21 @@ namespace GameServer
             }
         }
 
-        public void Handle_C2S_StartLinkRoom(IPEndPoint ip)
+        public void Handle_C2S_StartLinkRoom(C2S_StartLinkRoom value)
         {
-            if(!m_waitIPList.Contains(ip))
+            Console.WriteLine($"{m_reciveIp} 尝试连接房间");
+            if (!m_waitIPList.Contains(m_reciveIp))
             {
-                m_waitIPList.Add(ip);
+                m_waitIPList.Add(m_reciveIp);
                 LinkRoom();
             }
         }
 
-        public void Handle_C2S_EndLinkRoom(IPEndPoint ip)
+        public void Handle_C2S_EndLinkRoom(C2S_EndLinkRoom value)
         {
-            if(m_waitIPList.Contains(ip))
+            if(m_waitIPList.Contains(m_reciveIp))
             {
-                m_waitIPList.Remove(ip);
+                m_waitIPList.Remove(m_reciveIp);
             }
         }
 

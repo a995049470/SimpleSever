@@ -27,6 +27,7 @@ namespace LPTCTool
                 LPTCCreator.ExcelRowToScripts(row, s_outPath);
             }
             LPTCCreator.CreateLPTCEnum(sheet, s_outPath);
+            LPTCCreator.CreateLPTCHandle(sheet, s_outPath);
             Console.WriteLine("生成完成!按任意键退出......");
             Console.ReadKey();
         }

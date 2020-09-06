@@ -69,37 +69,43 @@ namespace GameServer
 
         static void Main(string[] args)
         {
-            var server = new UdpListener();
-
-            //start listening for messages and copy the messages back to the client
-            Task.Factory.StartNew(async () =>
-            {
-                while (true)
-                {
-                    Console.WriteLine("正在接受");
-                    var received = await server.Receive();
-                    var msg = received.msg;
-                    var value = C2S_S2C_Talk.Parse(msg);
-                    Console.WriteLine($"服务器接受到了 : {value.talk}  {received.sender}");
-                    value.talk += "--来自服务器复读!";
-                    server.S2C_Send(received.sender, value);
-                }
-            });
-
-
+            var cloud = new CloudServer();
+            Console.WriteLine("启动游戏服务器!");
             while (true)
             {
-                if (Console.ReadKey().Key == ConsoleKey.A)
-                {
-                    Console.WriteLine("按下了A");
-                    Test();
-                }
-                else if (Console.ReadKey().Key == ConsoleKey.W)
-                {
-                    Console.WriteLine("按下了W");
-                    Test2();
-                }
+
             }
+
+            //start listening for messages and copy the messages back to the client
+            //测试
+            //Task.Factory.StartNew(async () =>
+            //{
+            //    while (true)
+            //    {
+            //        Console.WriteLine("正在接受");
+            //        var received = await server.Receive();
+            //        var msg = received.msg;
+            //        var value = C2S_S2C_Talk.Parse(msg);
+            //        Console.WriteLine($"服务器接受到了 : {value.talk}  {received.sender}");
+            //        value.talk += "--来自服务器复读!";
+            //        server.S2C_Send(received.sender, value);
+            //    }
+            //});
+
+
+            //while (true)
+            //{
+            //    if (Console.ReadKey().Key == ConsoleKey.A)
+            //    {
+            //        Console.WriteLine("按下了A");
+            //        Test();
+            //    }
+            //    else if (Console.ReadKey().Key == ConsoleKey.W)
+            //    {
+            //        Console.WriteLine("按下了W");
+            //        Test2();
+            //    }
+            //}
         }
 
        

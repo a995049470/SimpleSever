@@ -34,6 +34,7 @@ namespace LUDP
         public void Dispose()
         {
             m_client.Close();
+            m_client = null;
         }
 
     }

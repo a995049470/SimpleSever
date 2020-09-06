@@ -19,6 +19,76 @@ namespace LPTCTool
     
     public class LPTCCreator
     {
+
+        public static void CreateLPTCHandle(ISheet sheet, string outpath)
+        {
+            string content = @"
+using System;
+namespace LPTC
+{
+    public class LPTCHandle
+    {
+        public void Handle(byte[] bytes)
+        {
+            if(bytes?.Length < 4)
+            {
+                return;
+            }
+            ushort id = (ushort)(bytes[0] | bytes[1] << 8);
+            ushort len = (ushort)(bytes[2] | bytes[3] << 8);
+            if(bytes?.Length != len + 4)
+            {
+                return;
+            }
+            switch (id)
+            {
+{body_parse}
+            }
+        }
+{body_action}
+    }
+}";
+            string e_parse = @"
+                case {pid}:
+                    {type} value_{pid} = {type}.Parse(bytes);
+                    m_action_{pid}?.Invoke(value_{pid});
+                    break;";
+            string e_action = @"
+        private Action<{type}> m_action_{pid} = null;
+        public void Handle({type} value)
+        {
+            m_action_{pid}?.Invoke(value);
+        }
+
+        public void AddListener(Action<{type}> action)
+        {
+            m_action_{pid} += action;
+        }
+
+        public void RemoveListener(Action<{type}> action)
+        {
+            m_action_{pid} -= action;
+        }";
+            string body_parse = "";
+            string body_action = "";
+            for (int i = 0; i < sheet.LastRowNum + 1; i++)
+            {
+                var row = sheet.GetRow(i);
+                if (row == null)
+                {
+                    return;
+                }
+                string pid = row.GetCell(0)?.ToString();
+                string type = row.GetCell(1)?.ToString();
+                body_parse += e_parse.Replace("{pid}", pid).Replace("{type}", type);
+                body_action += e_action.Replace("{pid}", pid).Replace("{type}", type);
+            }
+            content = content.Replace("{body_parse}", body_parse).Replace("{body_action}", body_action);
+            string path = $"{outpath}\\{"LPTCHandle"}.cs";
+            System.IO.File.WriteAllText(path, content);
+        }
+
+
         public static void CreateLPTCEnum(ISheet sheet, string outpath)
         {
             string content = @"
@@ -44,6 +114,7 @@ namespace LPTC
             content = content.Replace("{var_types}", var_types);
             string path = $"{outpath}\\{"LPTCType"}.cs";
             System.IO.File.WriteAllText(path, content);
+
 
         }
 
@@ -84,13 +155,13 @@ namespace LPTC
 {body_fields}
         public byte[] ToBytes()
         {
-            ushort id = 2;
-            ushort len = 0;
-            var b_0 = Helper.ToBytes(id);
+            ushort _id = {pid};
+            ushort _len = 0;
+            var b_0 = Helper.ToBytes(_id);
 
 {body_tobytes}
-            len = (ushort)(0{body_len});
-            var b_1 = Helper.ToBytes(len);
+            _len = (ushort)(0{body_len});
+            var b_1 = Helper.ToBytes(_len);
             return Helper.MergeBytes(b_0, b_1{mearg_args}); 
         }
             

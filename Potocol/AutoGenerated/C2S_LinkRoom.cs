@@ -4,15 +4,15 @@ using System.Collections.Generic;
 
 namespace LPTC
 {
-    [PID(6)]
+    [PID(7)]
     [Serializable]
-    public struct C2S_EndLinkRoom : IToBytes
+    public struct C2S_LinkRoom : IToBytes
     {
 
 
         public byte[] ToBytes()
         {
-            ushort _id = 6;
+            ushort _id = 7;
             ushort _len = 0;
             var b_0 = Helper.ToBytes(_id);
 
@@ -22,9 +22,9 @@ namespace LPTC
             return Helper.MergeBytes(b_0, b_1); 
         }
             
-        public static C2S_EndLinkRoom Parse(byte[] bytes)
+        public static C2S_LinkRoom Parse(byte[] bytes)
         {
-            C2S_EndLinkRoom value = new C2S_EndLinkRoom();
+            C2S_LinkRoom value = new C2S_LinkRoom();
             int start = 4;
 
 

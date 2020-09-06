@@ -14,16 +14,16 @@ namespace LPTC
 
         public byte[] ToBytes()
         {
-            ushort id = 2;
-            ushort len = 0;
-            var b_0 = Helper.ToBytes(id);
+            ushort _id = 2;
+            ushort _len = 0;
+            var b_0 = Helper.ToBytes(_id);
 
             var b_10 = Helper.ToBytes(talk);
             len_talk = (ushort)b_10.Length;
             var b_9 = Helper.ToBytes(len_talk);
 
-            len = (ushort)(0 + b_9.Length + b_10.Length);
-            var b_1 = Helper.ToBytes(len);
+            _len = (ushort)(0 + b_9.Length + b_10.Length);
+            var b_1 = Helper.ToBytes(_len);
             return Helper.MergeBytes(b_0, b_1, b_9, b_10); 
         }
             
