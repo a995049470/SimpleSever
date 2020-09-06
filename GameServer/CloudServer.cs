@@ -34,6 +34,7 @@ namespace GameServer
             });
         }
 
+
         public void Handle(Received received)
         {
             m_reciveIp = received.sender;
