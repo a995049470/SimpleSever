@@ -9,7 +9,7 @@ using System.Threading;
 
 namespace LUDP
 {
-
+    
     public class UdpBase
     {
         protected UdpClient m_client;
@@ -42,26 +42,6 @@ namespace LUDP
             };
         }
 
-
-        //public async Task<Received> Receive()
-        //{
-        //    byte[] buffer = null;
-        //    IPEndPoint ip = null;
-        //    while (m_client != null)
-        //    {
-        //        buffer = m_client.Receive(ref ip);
-        //        if(buffer?.Length > 0)
-        //        {
-        //            break;
-        //        }
-        //        await Task.Delay(ReceiveInterval);
-        //    }
-        //    return new Received()
-        //    {
-        //        sender = ip,
-        //        msg = buffer
-        //    };
-        //}
 
         public bool C2S_Send<T>(T value) where T : IToBytes
         {

@@ -1,0 +1,4 @@
+D:\StudyData\UnityPorjects\WarOfCard\Assets\Plugins\LDebugTool.dll
+D:\StudyData\VSProjects\SmapleServer\LDebugTool\obj\Release\LDebugTool.csproj.CoreCompileInputs.cache
+D:\StudyData\VSProjects\SmapleServer\LDebugTool\obj\Release\LDebugTool.dll
+D:\StudyData\VSProjects\SmapleServer\LDebugTool\obj\Release\LDebugTool.csprojAssemblyReference.cache
